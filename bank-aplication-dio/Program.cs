@@ -1,4 +1,5 @@
-﻿using System;
+﻿using bank_aplication_dio.Classes;
+using System;
 
 namespace bank_aplication_dio
 {
@@ -6,7 +7,7 @@ namespace bank_aplication_dio
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
     }
 }
