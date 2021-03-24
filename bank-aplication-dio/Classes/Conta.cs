@@ -50,10 +50,10 @@ namespace bank_aplication_dio.Classes
         public override string ToString()
         {
             string retorno = "";
-            retorno += "Tipo conta" + this.TipoConta + " | ";
-            retorno += "Nome" + this.Nome + " | ";
-            retorno += "Saldo" + this.Saldo + " | ";
-            retorno += "Crédito" + this.Credito + " | ";
+            retorno += "Tipo conta: " + this.TipoConta + " | ";
+            retorno += "Nome: " + this.Nome + " | ";
+            retorno += "Saldo: " + this.Saldo + " | ";
+            retorno += "Crédito: " + this.Credito + " | ";
             return retorno;
         }
 
