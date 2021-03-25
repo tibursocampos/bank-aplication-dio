@@ -50,8 +50,8 @@ namespace bank_aplication_dio
             Console.WriteLine("Informe a opção desejada:");
             Console.WriteLine("1 - Listar contas");
             Console.WriteLine("2 - Inserir nova conta");
-            Console.WriteLine("3 - Trasnferir");
-            Console.WriteLine("4 - Sacar");
+            Console.WriteLine("3 - Sacar");
+            Console.WriteLine("4 - Trasnferir");
             Console.WriteLine("5 - Depositar");
             Console.WriteLine("C - Limpar Tela");
             Console.WriteLine("X - Sair");
@@ -65,7 +65,7 @@ namespace bank_aplication_dio
         {
             Console.WriteLine("Listar contas");
 
-            if(listaContas.Count == 0)
+            if (listaContas.Count == 0)
             {
                 Console.WriteLine("Sem contas cadastradas !");
             }
@@ -95,22 +95,42 @@ namespace bank_aplication_dio
 
             Conta novaConta = new Conta(entradaNome, entradaSaldo, entradaCredito, (TipoConta)entradaTipoConta);
             listaContas.Add(novaConta);
-            ObterOpcaoUsuario();
         }
 
         private static void Sacar()
         {
+            Console.WriteLine("Digite o número da conta: ");
+            int indiceConta = int.Parse(Console.ReadLine());
 
+            Console.WriteLine("Digite o valor do saque: ");
+            double valorSaque = double.Parse(Console.ReadLine());
+
+            listaContas[indiceConta].Sacar(valorSaque);
         }
 
         private static void Transferir()
         {
+            Console.WriteLine("Digite a conta para retirada: ");
+            int contaRetirada = int.Parse(Console.ReadLine());
 
+            Console.WriteLine("Digite a conta de destino: ");
+            int contaDestino = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite o valor da transferência: ");
+            double valorTransferencia = double.Parse(Console.ReadLine());
+
+            listaContas[contaRetirada].Transferir(valorTransferencia, listaContas[contaDestino]);
         }
 
         private static void Depositar()
         {
+            Console.WriteLine("Digita a conta para depósito: ");
+            int contaDeposito = int.Parse(Console.ReadLine());
 
+            Console.WriteLine("Digite o valor do depósito: ");
+            double valorDeposito = double.Parse(Console.ReadLine());
+
+            listaContas[contaDeposito].Depositar(valorDeposito);
         }
     }
 }

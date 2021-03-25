@@ -22,7 +22,7 @@ namespace bank_aplication_dio.Classes
 
         public bool Sacar(double valorSaque)
         {
-            if(this.Saldo - valorSaque < this.Credito * -1)
+            if( this.Saldo - valorSaque < this.Credito * -1)
             {
                 Console.WriteLine("Saldo insuficiente");
                 return false;
